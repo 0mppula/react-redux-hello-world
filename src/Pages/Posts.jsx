@@ -29,7 +29,7 @@ const Posts = (props) => {
 		};
 
 		getPosts();
-	}, [getPostsRequest, getPostsSuccess, getPostsFailure]);
+	}, [getPostsRequest, getPostsSuccess, getPostsFailure, posts]);
 
 	if (loading) {
 		return <Loading />;
@@ -42,7 +42,7 @@ const Posts = (props) => {
 	return (
 		<ListContainer>
 			<ListItemsHeader>
-			<h2>Posts ({posts?.length})</h2>
+				<h2>Posts ({posts?.length})</h2>
 			</ListItemsHeader>
 
 			<PostsList posts={posts} />

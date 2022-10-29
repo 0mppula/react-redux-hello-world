@@ -30,7 +30,7 @@ const Comments = (props) => {
 		};
 
 		getComments();
-	}, [getCommentsRequest, getCommentsSuccess, getCommentsFailure]);
+	}, [getCommentsRequest, getCommentsSuccess, getCommentsFailure, comments]);
 
 	if (loading) {
 		return <Loading />;

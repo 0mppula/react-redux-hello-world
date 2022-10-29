@@ -29,7 +29,7 @@ const Users = (props) => {
 		};
 
 		getUsers();
-	}, [getUsersRequest, getUsersSuccess, getUsersFailure]);
+	}, [getUsersRequest, getUsersSuccess, getUsersFailure, users]);
 
 	if (loading) {
 		return <Loading />;
