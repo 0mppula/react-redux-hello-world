@@ -84,7 +84,8 @@ const All = (props) => {
 		};
 
 		getAll();
-	}, []);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [users, posts, comments]);
 
 	if (UsersLoading || PostsLoading || CommentsLoading) {
 		return <Loading />;
