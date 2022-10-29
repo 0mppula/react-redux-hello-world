@@ -12,6 +12,7 @@ const Container = styled.div`
 	width: min(1200px, 95vw);
 	margin: 0 auto;
 	position: relative;
+	min-height: 100vh;
 `;
 
 function App() {

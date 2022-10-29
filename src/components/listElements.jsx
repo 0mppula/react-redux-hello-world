@@ -1,5 +1,19 @@
 import styled from 'styled-components';
 
+const ListContainer = styled.div`
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	padding-top: 9rem;
+	margin-bottom: 6rem;
+
+	.error-loading {
+		width: 100%;
+		text-align: center;
+	}
+`;
+
 const ListItem = styled.div`
 	display: flex;
 	flex-direction: column;
@@ -39,19 +53,6 @@ const ListItemSection = styled.div`
 		&:nth-child(odd) {
 			font-weight: bold;
 		}
-	}
-`;
-
-const ListContainer = styled.div`
-	width: 100%;
-	display: flex;
-	flex-wrap: wrap;
-	gap: 1rem;
-	margin: 2rem 0 6rem;
-
-	.error-loading {
-		width: 100%;
-		text-align: center;
 	}
 `;
 
