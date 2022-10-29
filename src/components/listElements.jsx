@@ -14,7 +14,19 @@ const ListItem = styled.div`
 	h2 {
 		margin-bottom: 1rem;
 		padding-bottom: 0.5rem;
-		border-bottom: solid 1px #212121;
+		border-bottom: solid 1px var(--clr-dark);
+	}
+`;
+
+const ListItemsHeader = styled.div`
+	margin: 1rem 0;
+	padding: 1rem;
+	border-bottom: solid 1px var(--clr-dark);
+	background-color: var(--clr-dark);
+	width: 100%;
+
+	h2 {
+		color: var(--clr-light);
 	}
 `;
 
@@ -43,4 +55,4 @@ const ListContainer = styled.div`
 	}
 `;
 
-export { ListItem, ListContainer, ListItemSection };
+export { ListItem, ListContainer, ListItemSection, ListItemsHeader };

@@ -1,9 +1,12 @@
 import React, { useEffect } from 'react';
 import axios from 'axios';
-import { getUsersSuccess, getUsersFailure, getUsersRequest } from '../actions/users';
 import { connect } from 'react-redux';
-import { ListItemSection, ListItem, ListContainer } from '../components/listElements';
-import ErrorLoading from '../components/List/ErrorLoading';
+
+import { getUsersSuccess, getUsersFailure, getUsersRequest } from '../actions/users';
+import { ListContainer, ListItemsHeader } from '../components/listElements';
+import Error from '../components/List/Error';
+import Loading from '../components/List/Loading';
+import UsersList from '../components/List/UsersList';
 
 const Users = (props) => {
 	const { users, error, loading } = props;
@@ -29,60 +32,20 @@ const Users = (props) => {
 	}, [getUsersRequest, getUsersSuccess, getUsersFailure]);
 
 	if (loading) {
-		return <ErrorLoading state="loading" />;
+		return <Loading />;
 	}
 
 	if (error) {
-		return <ErrorLoading state="error" error={error} />;
+		return <Error error={error} />;
 	}
 
 	return (
 		<ListContainer>
-			{users?.map((user, i) => (
-				<ListItem key={user.id + i}>
-					<h2>User {i + 1}</h2>
+			<ListItemsHeader>
+				<h2>Users ({users?.length})</h2>
+			</ListItemsHeader>
 
-					<ListItemSection>
-						<p>Name</p>
-						<p>{user.name}</p>
-					</ListItemSection>
-
-					<ListItemSection>
-						<p>Username</p>
-						<p>{user.username}</p>
-					</ListItemSection>
-
-					<ListItemSection>
-						<p>Email</p>
-						<p>{user.email}</p>
-					</ListItemSection>
-
-					<ListItemSection>
-						<p>Address</p>
-						<p>
-							{`${user.address.street}
-						${user.address.suite} 
-						${user.address.city} 
-						${user.address.zipcode}`}
-						</p>
-					</ListItemSection>
-
-					<ListItemSection>
-						<p>Phone</p>
-						<p>{user.phone}</p>
-					</ListItemSection>
-
-					<ListItemSection>
-						<p>Website</p>
-						<p>{user.website}</p>
-					</ListItemSection>
-
-					<ListItemSection>
-						<p>Phone</p>
-						<p>{user.phone}</p>
-					</ListItemSection>
-				</ListItem>
-			))}
+			<UsersList users={users} />
 		</ListContainer>
 	);
 };

@@ -6,6 +6,7 @@ import Posts from './Pages/Posts';
 import Comments from './Pages/Comments';
 import All from './Pages/All';
 import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 
 const Container = styled.div`
 	width: min(1200px, 95vw);
@@ -15,19 +16,23 @@ const Container = styled.div`
 
 function App() {
 	return (
-		<Container>
-			<BrowserRouter>
-				<Header />
+		<>
+			<Container>
+				<BrowserRouter>
+					<Header />
 
-				<Routes>
-					<Route path="/users" element={<Users />} />
-					<Route path="/posts" element={<Posts />} />
-					<Route path="/comments" element={<Comments />} />
-					<Route path="/all" element={<All />} />
-					<Route path="*" element={<Navigate to="/users" />} />
-				</Routes>
-			</BrowserRouter>
-		</Container>
+					<Routes>
+						<Route path="/users" element={<Users />} />
+						<Route path="/posts" element={<Posts />} />
+						<Route path="/comments" element={<Comments />} />
+						<Route path="/all" element={<All />} />
+						<Route path="*" element={<Navigate to="/users" />} />
+					</Routes>
+				</BrowserRouter>
+			</Container>
+
+			<Footer />
+		</>
 	);
 }
 

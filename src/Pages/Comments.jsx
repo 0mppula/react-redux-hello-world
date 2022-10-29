@@ -3,8 +3,10 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 
 import { getCommentsRequest, getCommentsSuccess, getCommentsFailure } from '../actions/comments';
-import { ListContainer, ListItem, ListItemSection } from '../components/listElements';
-import ErrorLoading from '../components/List/ErrorLoading';
+import { ListContainer, ListItemsHeader } from '../components/listElements';
+import Error from '../components/List/Error';
+import Loading from '../components/List/Loading';
+import CommentsList from '../components/List/CommentsList';
 
 const Comments = (props) => {
 	const { loading, comments, error } = props;
@@ -31,35 +33,20 @@ const Comments = (props) => {
 	}, [getCommentsRequest, getCommentsSuccess, getCommentsFailure]);
 
 	if (loading) {
-		return <ErrorLoading state="loading" />;
+		return <Loading />;
 	}
 
 	if (error) {
-		return <ErrorLoading state="error" error={error} />;
+		return <Error error={error} />;
 	}
 
 	return (
 		<ListContainer>
-			{comments?.map((post, i) => (
-				<ListItem key={(post.id, i)}>
-					<h2>Comment {i + 1}</h2>
+			<ListItemsHeader>
+				<h2>Comments ({comments?.length})</h2>
+			</ListItemsHeader>
 
-					<ListItemSection>
-						<p>Email</p>
-						<p>{post.email}</p>
-					</ListItemSection>
-
-					<ListItemSection>
-						<p>Name</p>
-						<p>{post.name}</p>
-					</ListItemSection>
-
-					<ListItemSection>
-						<p>Comment</p>
-						<p>{post.body}</p>
-					</ListItemSection>
-				</ListItem>
-			))}
+			<CommentsList comments={comments} />
 		</ListContainer>
 	);
 };

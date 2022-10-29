@@ -3,8 +3,10 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 
 import { getPostsRequest, getPostsSuccess, getPostsFailure } from '../actions/posts';
-import { ListContainer, ListItem, ListItemSection } from '../components/listElements';
-import ErrorLoading from '../components/List/ErrorLoading';
+import { ListContainer, ListItemsHeader } from '../components/listElements';
+import Error from '../components/List/Error';
+import Loading from '../components/List/Loading';
+import PostsList from '../components/List/PostsList';
 
 const Posts = (props) => {
 	const { loading, posts, error } = props;
@@ -30,30 +32,20 @@ const Posts = (props) => {
 	}, [getPostsRequest, getPostsSuccess, getPostsFailure]);
 
 	if (loading) {
-		return <ErrorLoading state="loading" />;
+		return <Loading />;
 	}
 
 	if (error) {
-		return <ErrorLoading state="error" error={error} />;
+		return <Error error={error} />;
 	}
 
 	return (
 		<ListContainer>
-			{posts?.map((post, i) => (
-				<ListItem key={(post.id, i)}>
-					<h2>Post {i + 1}</h2>
+			<ListItemsHeader>
+			<h2>Posts ({posts?.length})</h2>
+			</ListItemsHeader>
 
-					<ListItemSection>
-						<p>Title</p>
-						<p>{post.title}</p>
-					</ListItemSection>
-
-					<ListItemSection>
-						<p>Post</p>
-						<p>{post.body}</p>
-					</ListItemSection>
-				</ListItem>
-			))}
+			<PostsList posts={posts} />
 		</ListContainer>
 	);
 };
