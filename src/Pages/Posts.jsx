@@ -7,10 +7,12 @@ import { ListContainer, ListItemsHeader } from '../components/listElements';
 import Error from '../components/List/Error';
 import Loading from '../components/List/Loading';
 import PostsList from '../components/List/PostsList';
+import useTitle from '../hooks/useTitle';
 
 const Posts = (props) => {
 	const { loading, posts, error } = props;
 	const { getPostsRequest, getPostsSuccess, getPostsFailure } = props;
+	useTitle('Posts');
 
 	useEffect(() => {
 		const getPosts = async () => {

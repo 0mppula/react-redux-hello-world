@@ -7,10 +7,12 @@ import { ListContainer, ListItemsHeader } from '../components/listElements';
 import Error from '../components/List/Error';
 import Loading from '../components/List/Loading';
 import UsersList from '../components/List/UsersList';
+import useTitle from '../hooks/useTitle';
 
 const Users = (props) => {
 	const { users, error, loading } = props;
 	const { getUsersRequest, getUsersSuccess, getUsersFailure } = props;
+	useTitle('Users');
 
 	useEffect(() => {
 		const getUsers = async () => {

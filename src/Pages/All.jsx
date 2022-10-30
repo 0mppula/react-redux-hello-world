@@ -11,6 +11,7 @@ import CommentsList from '../components/List/CommentsList';
 import Error from '../components/List/Error';
 import Loading from '../components/List/Loading';
 import { ListContainer, ListItemsHeader } from '../components/listElements';
+import useTitle from '../hooks/useTitle';
 
 const All = (props) => {
 	// Redux state
@@ -38,6 +39,7 @@ const All = (props) => {
 		getCommentsSuccess,
 		getCommentsFailure,
 	} = props;
+	useTitle('All');
 
 	useEffect(() => {
 		const getAll = async () => {

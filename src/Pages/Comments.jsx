@@ -7,10 +7,12 @@ import { ListContainer, ListItemsHeader } from '../components/listElements';
 import Error from '../components/List/Error';
 import Loading from '../components/List/Loading';
 import CommentsList from '../components/List/CommentsList';
+import useTitle from '../hooks/useTitle';
 
 const Comments = (props) => {
 	const { loading, comments, error } = props;
 	const { getCommentsRequest, getCommentsSuccess, getCommentsFailure } = props;
+	useTitle('Comments');
 
 	useEffect(() => {
 		const getComments = async () => {
