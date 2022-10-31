@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ListItem, ListItemSection } from '../listElements';
+import { ListItem, ListItemSection } from './listElements';
 
 const PostsList = ({ posts }) => {
 	return (

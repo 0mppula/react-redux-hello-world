@@ -14,6 +14,7 @@ const Container = styled.div`
 	margin: 0 auto;
 	position: relative;
 	min-height: 100vh;
+	padding-top: 9rem;
 `;
 
 function App() {

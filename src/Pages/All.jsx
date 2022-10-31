@@ -10,7 +10,7 @@ import PostsList from '../components/List/PostsList';
 import CommentsList from '../components/List/CommentsList';
 import Error from '../components/List/Error';
 import Loading from '../components/List/Loading';
-import { ListContainer, ListItemsHeader } from '../components/listElements';
+import { ListContainer, ListItemsHeader } from '../components/List/listElements';
 import useTitle from '../hooks/useTitle';
 
 const All = (props) => {

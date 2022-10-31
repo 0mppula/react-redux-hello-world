@@ -3,7 +3,7 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 
 import { getCommentsRequest, getCommentsSuccess, getCommentsFailure } from '../actions/comments';
-import { ListContainer, ListItemsHeader } from '../components/listElements';
+import { ListContainer, ListItemsHeader } from '../components/List/listElements';
 import Error from '../components/List/Error';
 import Loading from '../components/List/Loading';
 import CommentsList from '../components/List/CommentsList';

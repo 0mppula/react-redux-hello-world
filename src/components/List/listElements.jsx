@@ -5,7 +5,6 @@ const ListContainer = styled.div`
 	display: flex;
 	flex-wrap: wrap;
 	gap: 1rem;
-	padding-top: 9rem;
 	margin-bottom: 6rem;
 
 	.error-loading {

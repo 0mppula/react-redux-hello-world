@@ -1,5 +1,5 @@
 import React from 'react';
-import { ListContainer } from '../listElements';
+import { ListContainer } from './listElements';
 
 const Error = ({ error }) => {
 	return (
