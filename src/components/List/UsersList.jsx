@@ -42,11 +42,6 @@ const UsersList = ({ users }) => {
 						<p>Website</p>
 						<p>{user.website}</p>
 					</ListItemSection>
-
-					<ListItemSection>
-						<p>Phone</p>
-						<p>{user.phone}</p>
-					</ListItemSection>
 				</ListItem>
 			))}
 		</>
