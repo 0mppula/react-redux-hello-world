@@ -39,7 +39,7 @@ const Comments = (props) => {
 	}
 
 	if (error) {
-		return <Error error={error} />;
+		return <Error errorMessage={error} />;
 	}
 
 	return (

@@ -94,13 +94,13 @@ const All = (props) => {
 	}
 
 	if (UsersError && PostsError && CommentsError) {
-		return <Error error={'Cannot get all items'} />;
+		return <Error errorMessage={'Cannot get all items'} />;
 	}
 
 	return (
 		<ListContainer>
 			{UsersLoading ? (
-				<Loading message="Loading users..." />
+				<Loading loadingMessage="Loading users..." />
 			) : (
 				<>
 					<ListItemsHeader>
@@ -111,7 +111,7 @@ const All = (props) => {
 			)}
 
 			{PostsLoading ? (
-				<Loading message="Loading posts..." />
+				<Loading loadingMessage="Loading posts..." />
 			) : (
 				<>
 					<ListItemsHeader>
@@ -122,7 +122,7 @@ const All = (props) => {
 			)}
 
 			{CommentsLoading ? (
-				<Loading message="Loading comments..." />
+				<Loading loadingMessage="Loading comments..." />
 			) : (
 				<>
 					<ListItemsHeader>

@@ -1,10 +1,10 @@
 import React from 'react';
 import { ListContainer } from './listElements';
 
-const Loading = ({ message = 'Loading...' }) => {
+const Loading = ({ loadingMessage = 'Loading...' }) => {
 	return (
 		<ListContainer>
-			<p className="error-loading">{message}</p>
+			<p className="error-loading">{loadingMessage}</p>
 		</ListContainer>
 	);
 };
