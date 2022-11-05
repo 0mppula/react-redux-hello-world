@@ -94,7 +94,7 @@ const All = (props) => {
 	}
 
 	if (UsersError && PostsError && CommentsError) {
-		return <Error errorMessage={'Cannot get all items'} />;
+		return <Error errorMessage="Cannot get all items" />;
 	}
 
 	return (
